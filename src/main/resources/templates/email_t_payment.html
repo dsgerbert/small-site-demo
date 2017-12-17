@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+        <p>Здравствуйте!<br/>
+           Получено подтверждение платежа (кошелёк <span th:text="${yandexWallet}">wallet</span>)<br/>
+           <span th:if="${unaccepted} == 'true'"><strong>Платеж не зачислен (возможно кошелёк переполнен)</strong></span>
+           <span th:if="${codepro} == 'true'"><strong>Платеж имеет код протекции</strong></span>
+           Тип перевода: <span th:text="${notification_type}">notification_type</span><br/>
+           Идентификатор операции: <span th:text="${operation_id}">operation_id</span><br/>
+           Зачислено: <span th:text="${amount}">amount</span><br/>
+           Списано: <span th:text="${withdraw_amount}">withdraw_amount</span><br/>
+           Валюта: <span th:text="${currency}">currency</span><br/>
+           Проведен: <span th:text="${datetimePayment}">datetimePayment</span><br/>
+           Отправитель: <span th:text="${sender}">sender</span><br/>
+           Метка платежа: <span th:text="${label}">label</span><br/>
+        </p>
+        <hr/>
+        <sub th:text="${id}">id</sub><br/>
+        <sub th:text="${dateTime}">dateTime</sub>
+    </body>
+</html>

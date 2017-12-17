@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{app.title}"></title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="Заказать уборку квартиры или коттеджа. Работа по дому. Стандартная уборка. Генеральная уборка. Уборка после ремонта. Мойка окон. Город Химки Московской области."/>
+
+        <!-- CSS -->
+        <div th:replace="header_css" />
+    </head>
+    <body>
+        <div th:replace="main_header" />
+
+        <main role="main" class="container">
+
+            <div th:replace="message_out" />
+
+            <div class="card">
+                <h6 class="card-header mt-0">Отправить заявку на уборку</h6>
+                <div class="card-body">
+                    <form class="form-horizontal" action="/order" method="post" id="form">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-5 col-md-3 col-form-label">Ваше имя*:</label>
+                            <div class="col-sm-7 col-md-9">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Как мы можем к Вам обращаться"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-sm-5 col-md-3 col-form-label">Телефон:</label>
+                            <div class="col-sm-7 col-md-9">
+                                <input type="text" class="form-control contact-group" id="phone" name="phone" placeholder="Номер телефона для связи"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-5 col-md-3 col-form-label">Email:</label>
+                            <div class="col-sm-7 col-md-9">
+                                <input type="text" class="form-control contact-group" id="email" name="email" placeholder="Email адрес для связи"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-5 col-md-3 col-form-label">Заказ:</label>
+                            <div class="col-sm-7 col-md-9">
+                                <select type="text" class="form-control" id="title" name="title">
+                                    <option th:selected="${order_type == '0'}">Стандартная уборка</option>
+                                    <option th:selected="${order_type == '1'}">Генеральная уборка</option>
+                                    <option th:selected="${order_type == '2'}">Уборка после ремонта</option>
+                                    <option th:selected="${order_type == '3'}">Мойка окон</option>
+                                    <option th:selected="${order_type == '4'}">Уборка на Ваш выбор, работа по дому</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Дополнительно:</label>
+                            <textarea class="form-control" id="text" name="text" rows="5" placeholder="Адрес и другие детали заказа"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="main_footer" />
+
+        <div th:replace="bottom_script"/>
+
+        <div th:replace="validate_script"/>
+
+        <script>
+            $(function(){
+                $.validator.methods.phone = function(value, element ) {
+                    return this.optional( element ) || /^(\+7|8)?\(?\d{3}\)?\d{3}-?\d{2}-?\d{2}$/.test( value );
+                };
+
+                $('#form').validate({
+
+                    highlight: function (element, errorClass) {
+                        $(element).add($(element).parent()).addClass("is-invalid");
+                    },
+
+                    unhighlight: function (element, errorClass) {
+                        $(element).add($(element).parent()).removeClass("is-invalid");
+                    },
+
+                    errorElement: "div",
+                    errorClass: "invalid-feedback",
+
+                    rules: {
+
+                        name: {
+                            required: true,
+                            minlength: 2,
+                            maxlength: 160
+                        },
+
+                        phone: {
+                            maxlength: 60,
+                            require_from_group: [1, ".contact-group"],
+                            phone: true
+                        },
+
+                        email: {
+                            email: true,
+                            maxlength: 120,
+                            require_from_group: [1, ".contact-group"]
+                        },
+
+                        text: {
+                            maxlength: 255
+                        }
+
+                    },
+
+                    errorElement: "div",
+                    errorClass: "invalid-feedback",
+
+                    messages: {
+
+                        name: {
+                            required: "Пожалуйста укажите Ваше имя",
+                            minlength: "Введите пожалуйста от 2-х символов в поле",
+                            maxlength: "Введите пожалуйста не более 160-ти символов в поле"
+                        },
+
+                        phone: {
+                            maxlength: "Введите пожалуйста не более 60-ти символов в поле",
+                            require_from_group: "Укажите пожалуйста контактную информацию",
+                            phone: "Пожалуйста укажите номер телефона, например в виде +7(xxx)xxx-xx-xx"
+                        },
+
+                        email: {
+                            email: "Укажите пожалуйста в формате адреса Email",
+                            maxlength: "Введите пожалуйста не более 120-ти символов в поле",
+                            require_from_group: "Укажите пожалуйста контактную информацию"
+                        },
+
+                        text: {
+                            maxlength: "Введите пожалуйста не более 255-ти символов в поле"
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

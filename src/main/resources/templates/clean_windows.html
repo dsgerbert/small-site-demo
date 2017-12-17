@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{app.title}"></title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="Мойка окон. Описание. Перечень услуг. Цены. Мойка окон в городе Химки Московской области."/>
+
+        <!-- CSS -->
+        <div th:replace="header_css" />
+    </head>
+    <body>
+
+        <div th:replace="main_header" />
+
+        <main role="main" class="container">
+            <div class="card">
+                <h6 class="card-header mt-0">Мойка окон</h6>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>Вымыть окна в квартире или коттедже достаточно сложная и не всегда выполнимая задача – обращайтесь к профессионалам! Сегодня это просто и удобно.
+                                Достаточно оставить <a href="/order?order_type=3">заявку на сайте</a>. Стоимость мойки окон зависит от степени загрязнения и общего количества оконных створок.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <table class="table">
+                                <tr>
+                                    <th>Время уборки</th>
+                                    <td><span th:utext="#{windows.time}"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Количество сотрудников</th>
+                                    <td><span th:utext="#{windows.staff}"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>Мойка окон в квартире или коттедже включает в себя ряд особенностей. Полный перечень услуг включает в себя:
+                            <ul>
+                                <li>Мойку окон – рамы, стеклянные поверхности, москитные сетки.</li>
+                                <li>Около оконное пространство – подоконники, отопительные батареи, карнизы.</li>
+                                <li>Придание блеска всем частям окна.</li>
+                            </ul>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Услуга</th>
+                                    <th>Цена</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td><span th:utext="#{windows.rec01}"/></td>
+                                    <td><span th:utext="#{windows.rec01.price}"/></td>
+                                </tr>
+                                <tr>
+                                    <td><span th:utext="#{windows.rec02}"/></td>
+                                    <td><span th:utext="#{windows.rec02.price}"/></td>
+                                </tr>
+                                <tr>
+                                    <td><span th:utext="#{windows.rec03}"/></td>
+                                    <td><span th:utext="#{windows.rec03.price}"/></td>
+                                </tr>
+                                <tr>
+                                    <td><span th:utext="#{windows.rec04}"/></td>
+                                    <td><span th:utext="#{windows.rec04.price}"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p>Также вы можете заказать <a href="/clean_support">стандартную уборку</a>, <a href="/clean_general">генеральную уборку</a> или <a href="/clean_repair">уборку после ремонта</a>.</p>
+
+                    <p>Данные услуги включают в себя полный комплекс услуг по уборке дома с учетом всех Ваших пожеланий. Мы предлагаем большой список дополнительных услуг, информацию о которых можно уточнить у нашего менеджера.<br/>
+                        При заказе уборки за Вами закрепляется персональный менеджер, который консультирует Вас по всем вопросам и осуществляет сопровождение всего цикла уборки.<br/>
+                        Мы гарантируем самое высокое качество и своевременность выполнения предоставляемых услуг!
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="main_footer" />
+
+        <div th:replace="bottom_script"/>
+    </body>
+</html>

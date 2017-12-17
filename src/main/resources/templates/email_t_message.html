@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+        <p>Здравствуйте!<br/>
+           Оставлено сообщение<br/>
+           Тема: <span th:text="${title}">title</span><br/>
+           Сообщение: <span th:text="${body}">body</span>
+        </p>
+        <hr/>
+        <sub th:text="${id}">id</sub><br/>
+        <sub th:text="${dateTime}">dateTime</sub>
+    </body>
+</html>

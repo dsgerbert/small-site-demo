@@ -1,0 +1,13 @@
+#!/bin/sh
+user_name=<valid_user_name>
+
+cd /home/$user_name/small-site-demo
+date=`date '+%d%m%y_%H.%M.%S'`
+
+# manualy create file backup_list with file list to backup
+su $user_name -c "tar -T backup_list -czf $date.tar.gz"
+
+# manualy create backup folder
+mv *.tar.gz backup
+
+rm backup_*.tab

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{app.title}"></title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="Уборка квартир и коттеджей. Работа по дому. Клининговая компания. Уборка после ремонта. Мойка окон. Город Химки Московской области."/>
+        <meta name="yandex-verification" content="71abb1a03eb764a6" />
+        <meta name="Keywords" content="Уборка квартир Уборка коттеджа Мойка окон Помыть окна Убрать квартиру Убрать коттедж Работа по дому"/>
+
+        <!-- CSS -->
+        <div th:replace="header_css" />
+    </head>
+    <body>
+
+        <div th:replace="main_header" />
+
+        <main role="main" class="container">
+
+            <div th:replace="message_out" />
+
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="50-discount.jpg" class="img-fluid" alt="50% скидка. Новый год и Рождество!" />
+                </div>
+                <div class="col-md-6">
+                    <p>Контактный телефон: <span th:utext="#{our.phone}">8XXX-XXX-XX-XX</span></p>
+                    <p>Или закажите <a href="\phone">обратный звонок</a></p>
+                    <p>Квартира нуждается в хорошей уборке, но Вы никак не можете к ней приступить? Мы придём Вам на помощь!</p>
+                    <p>Пенсионерам, многодетным семьям, а также людям с ограниченными возможностями дополнительная скидка 30%</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mt-0">
+                    <a class="btn" data-toggle="collapse" href="#clean_support" aria-controls="clean_support">
+                        Стандартная уборка <span th:text="#{support.min}"></span>
+                        <i class="material-icons">&#xE5CF;</i>
+                        <i class="material-icons">&#xE5CE;</i>
+                    </a>
+                </div>
+                <div class="card-body collapse" id="clean_support">
+                    <p>В стандартную уборку квартиры или коттеджа входит уборка и мойка всех поверхностей не выше 2-х метров от пола.</p>
+                    <p>Полный перечень услуг включает в себя:
+                        <ul>
+                            <li>Уборку комнат и коридоров – пол, плинтус, зеркало, сухая чистка ковров, мебель снаружи, вынос мусора.</li>
+                            <li>Уборку ванной комнаты и туалета – пол, ванна/душ, туалет, раковина, сантехника, стиральная машина, стены, мебель снаружи.</li>
+                            <li>Уборку на кухне – пол, мебель, посуда, микроволновка/плита/холодильник снаружи, вытяжка, удаление местных загрязнений, вынос мусора.</li>
+                            <li><i class="material-icons">&#xE7E9;</i>&nbsp;&nbsp;Каждая четвертая стандартная уборка в подарок (тот же или аналогичный по площади объект)</li>
+                        </ul>
+                    </p>
+                    <a class="btn btn-primary" href="/clean_support">Подробнее</a>
+                    <a class="btn btn-link" href="/order">Заявка</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mt-0">
+                    <a class="btn" data-toggle="collapse" href="#clean_general" aria-controls="clean_general">
+                        Генеральная уборка <span th:text="#{general.min}"></span>
+                        <i class="material-icons">&#xE5CF;</i>
+                        <i class="material-icons">&#xE5CE;</i>
+                    </a>
+                </div>
+                <div class="card-body collapse" id="clean_general">
+                    <p>В генеральную уборку квартиры или коттеджа входит уборка и мойка всех поверхностей.</p>
+                    <p>Полный перечень услуг включает в себя:
+                    <ul>
+                        <li>Уборку комнат и коридоров – пол, стены, мебель внутри и снаружи, антресоли, бытовая техника, сухая чистка ковров, карнизы, двери, батареи, розетки, люстры, все труднодоступные места.</li>
+                        <li>Уборку ванной комнаты и туалета – пол, стены, мебель внутри и снаружи, ванна/душ, туалет, раковина, сантехника, стиральная машина.</li>
+                        <li>Уборку на кухне – пол, мебель, посуда, микроволновка/плита/холодильник снаружи, вытяжка, удаление местных загрязнений, вынос мусора.</li>
+                        <li><i class="material-icons">&#xE7E9;</i>&nbsp;&nbsp;Каждая третья генеральная уборка в подарок (тот же или аналогичный по площади объект)</li>
+                    </ul>
+                    </p>
+                    <a class="btn btn-primary" href="/clean_general">Подробнее</a>
+                    <a class="btn btn-link" href="/order?order_type=1">Заявка</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mt-0">
+                    <a class="btn" data-toggle="collapse" href="#clean_repair" aria-controls="clean_repair">
+                        Уборка после ремонта <span th:text="#{repair.min}"></span>
+                        <i class="material-icons">&#xE5CF;</i>
+                        <i class="material-icons">&#xE5CE;</i>
+                    </a>
+                </div>
+                <div class="card-body collapse" id="clean_repair">
+                    <p>Уборка после ремонта включает в себя комплексную чистку и мойку всех поверхностей.</p>
+                    <p>Полный перечень услуг включает в себя:
+                        <ul>
+                            <li>Уборку комнат и коридоров – пол, стены, мебель внутри и снаружи, антресоли, бытовая техника, сухая чистка ковров, карнизы, двери, батареи, розетки, люстры, все труднодоступные места.</li>
+                            <li>Уборку ванной комнаты и туалета – пол, стены, мебель внутри и снаружи, ванна/душ, туалет, раковина, сантехника, стиральная машина.</li>
+                            <li>Уборку на кухне – пол, мебель, посуда, микроволновка/плита/холодильник снаружи, вытяжка, удаление местных загрязнений, вынос мусора.</li>
+                        </ul>
+                    </p>
+                    <a class="btn btn-primary" href="/clean_repair">Подробнее</a>
+                    <a class="btn btn-link" href="/order?order_type=2">Заявка</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mt-0">
+                    <a class="btn" data-toggle="collapse" href="#clean_windows" aria-controls="clean_windows">
+                        Мойка окон <span th:text="#{windows.min}"></span>
+                        <i class="material-icons">&#xE5CF;</i>
+                        <i class="material-icons">&#xE5CE;</i>
+                    </a>
+                </div>
+                <div class="card-body collapse" id="clean_windows">
+                    <p>Мойка окон в квартире или коттедже включает в себя ряд особенностей.</p>
+                    <p>Полный перечень услуг включает в себя:
+                        <ul>
+                            <li>Мойку окон – рамы, стеклянные поверхности, москитные сетки.</li>
+                            <li>Около оконное пространство – подоконники, отопительные батареи, карнизы.</li>
+                            <li>Придание блеска всем частям окна.</li>
+                        </ul>
+                    </p>
+                    <a class="btn btn-primary" href="/clean_windows">Подробнее</a>
+                    <a class="btn btn-link" href="/order?order_type=3">Заявка</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mt-0">
+                    <a class="btn" data-toggle="collapse" href="#clean_craft" aria-controls="clean_craft">
+                        Уборка на выбор, работа по дому
+                        <i class="material-icons">&#xE5CF;</i>
+                        <i class="material-icons">&#xE5CE;</i>
+                    </a>
+                </div>
+                <div class="card-body collapse" id="clean_craft">
+                    <p>Вы можете заказать у нас выполнение уборки на Ваш выбор. Экспресс-уборка отдельной комнаты, кухни, сан.узла.
+                    </p>
+                    <p>Мы с удовольстием поможем Вам в выполнении любой другой работы по дому: глажка и раскладывание белья,
+                        мытье посуды, чистка обуви и т.д.
+                    </p>
+                    <a class="btn btn-primary" href="/phone?order_type=1">Уточнить по телефону</a>
+                    <a class="btn btn-link" href="/order?order_type=4">Заявка</a>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="main_footer" />
+
+        <div th:replace="bottom_script"/>
+    </body>
+</html>

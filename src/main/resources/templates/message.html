@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{app.title}"></title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="Оставить отзыв. Уборка квартир и коттеджей. Стандартная уборка. Генеральная уборка. Уборка после ремонта. Мойка окон. Город Химки Московской области."/>
+
+        <!-- CSS -->
+        <div th:replace="header_css" />
+    </head>
+    <body>
+
+        <div th:replace="main_header" />
+
+        <main role="main" class="container">
+
+            <div th:replace="message_out" />
+
+            <div class="card">
+                <h6 class="card-header mt-0">Вы можете отправить нам сообщение</h6>
+                <div class="card-body">
+                    <form class="form-horizontal" action="/message" method="post" id="form">
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-5 col-md-3 col-form-label">Тема сообщения:</label>
+                            <div class="col-sm-7 col-md-9">
+                                <select type="text" class="form-control" id="title" name="title">
+                                    <option>Отзыв</option>
+                                    <option>Сайт</option>
+                                    <option>Другое</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Сообщение*:</label>
+                            <textarea class="form-control" id="text" name="text" rows="5" required="required" placeholder="Текст сообщения"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="main_footer" />
+
+        <div th:replace="bottom_script"/>
+
+        <div th:replace="validate_script"/>
+
+        <script>
+            $(function(){
+                $('#form').validate({
+                    highlight: function (element, errorClass) {
+                        $(element).add($(element).parent()).addClass("is-invalid");
+                    },
+                    unhighlight: function (element, errorClass) {
+                        $(element).add($(element).parent()).removeClass("is-invalid");
+                    },
+
+                    errorElement: "div",
+                    errorClass: "invalid-feedback",
+
+                    rules: {
+                        text: {
+                            required: true,
+                            minlength: 2,
+                            maxlength: 255
+                        }
+                    },
+
+                    messages: {
+                        text: {
+                            required: "Пожалуйста заполните текст сообщения",
+                            minlength: "Введите пожалуйста от 2-х символов в поле",
+                            maxlength: "Введите пожалуйста не более 255-ти символов в поле"
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

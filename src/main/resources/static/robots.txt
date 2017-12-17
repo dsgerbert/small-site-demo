@@ -1,0 +1,24 @@
+# it-support@clnok.ru
+
+User-agent: *
+Disallow: /cgi-bin
+Disallow: /phone
+Disallow: /message
+Disallow: /payment
+
+User-agent: Yandex
+Disallow: /cgi-bin
+Disallow: /phone
+Disallow: /message
+Disallow: /payment
+Host: clnok.ru
+
+User-agent: Googlebot
+Allow: *.css
+Allow: *.js
+Disallow: /cgi-bin
+Disallow: /phone
+Disallow: /message
+Disallow: /payment
+
+Sitemap: http://clnok.ru/sitemap.xml

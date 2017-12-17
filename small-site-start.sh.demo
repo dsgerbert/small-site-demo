@@ -1,0 +1,14 @@
+#!/bin/sh
+
+jar_file=small-site-demo-0.0.4.jar
+
+#replace <user_name> with valid user name
+user_name=<user_name>
+
+# you need to create this folder manual with necessary access and owner
+# and put there jar file with application
+cd /home/$user_name/small-site-demo
+
+chown $user_name $jar_file
+chmod u+x $jar_file
+su $user_name -c "java -jar $jar_file -Dfile.encoding=UTF-8 --server.port=8080 --spring.profiles.active=dev &"

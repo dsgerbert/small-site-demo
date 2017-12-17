@@ -1,0 +1,64 @@
+<header class="container">
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/" title="Home">
+            <i class="material-icons">&#xE88A;</i>
+            <span class="align-top" th:text="'&nbsp;&nbsp;' + #{app.company.brief}"></span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Подробное описание услуг">Услуги</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/clean_support">Стандартная уборка</a>
+                        <a class="dropdown-item" href="/clean_general">Генеральная уборка</a>
+                        <a class="dropdown-item" href="/clean_repair">Уборка после ремонта</a>
+                        <a class="dropdown-item" href="/clean_windows">Мойка окон</a>
+                    </div>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link text-primary" th:href="@{/order(order_type=${(order_type == null) ? ('0') : (order_type)})}" title="Оставить заявку на уборку" alt="Оставить заявку на уборку">Заявка</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/phone" title="Обратный звонок" alt="Обратный звонок">
+                        <i class="material-icons">&#xE0CD;</i>
+                        <span class="d-xs-block d-sm-none">&nbsp;&nbsp;Обратный звонок</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/email" title="Email cообщение" alt="Email cообщение">
+                        <i class="material-icons">&#xE0E1;</i>
+                        <span class="d-xs-block d-sm-none">&nbsp;&nbsp;Email cообщение</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/message" title="Оставить отзыв" alt="Оставить отзыв">
+                        <i class="material-icons">&#xE0C9;</i>
+                        <span class="d-xs-block d-sm-none">&nbsp;&nbsp;Оставить отзыв</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/payment" title="Оплата" alt="Оплата">
+                        <i class="material-icons">&#xE850;</i>
+                        <span class="d-xs-block d-sm-none">&nbsp;&nbsp;Оплата</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about" title="О нас" alt="О нас">
+                        <i class="material-icons">&#xE887;</i>
+                        <span class="d-xs-block d-sm-none">&nbsp;&nbsp;О нас</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

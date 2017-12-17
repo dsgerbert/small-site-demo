@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+        <p>Здравствуйте!<br/>
+           Оставлена заявка на уборку<br/>
+           Имя: <span th:text="${name}">name</span><br/>
+           Телефон: <span th:text="${phone}">phone</span><br/>
+           Email: <span th:text="${email}">email</span><br/>
+           Заказ: <span th:text="${title}">title</span><br/>
+           Детали: <span th:text="${body}">body</span>
+        </p>
+        <hr/>
+        <sub th:text="${id}">id</sub><br/>
+        <sub th:text="${dateTime}">dateTime</sub>
+    </body>
+</html>
