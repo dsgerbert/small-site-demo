@@ -12,23 +12,30 @@ small-site-demo
 
 Instructions for download
 -------------------------
-* mkdir small-site-demo
-* cd small-site-demo
-* git init
-* git clone https://github.com/dsgerbert/small-site-demo.git
 
+mkdir small-site-demo
+
+cd small-site-demo
+
+git init
+
+git clone https://github.com/dsgerbert/small-site-demo.git
 
 compile and run
 ---------------
-* ./mvmw clean package
 
-* you may run it
-* ./small-site-demo.sh
+./mvmw clean package
 
-* (if you need sendig emails you should specify Email sending params)
+you may run it
 
-* Also I put sh scripts (demo extention) which I use with Cron on WPS server or my RaspPI2
-* Other files is DB files and logs.
+./small-site-demo.sh
 
-* The content of site is about clearning services
-* Example https://clnok.ru
+(if you need sendig emails you should specify Email sending params)
+
+Also I put sh scripts (demo extention) which I use with Cron on WPS server or my RaspPI2
+
+Other files is DB files and logs.
+
+The content of site is about clearning services
+
+Example https://clnok.ru
