@@ -1,8 +1,10 @@
 small-site-demo
 ===============
 
-* Java spring boot mvc web application with thymleaf templates (demo and study purpose)
-* It demonstrates:
+Java spring boot mvc web application with thymleaf templates (demo and study purpose)
+
+It demonstrates:
+
 + Maven project
 + Java Spring-Boot
 + Sendig Emails
