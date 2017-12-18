@@ -16,3 +16,4 @@ Also I put sh scripts (demo extention) which I use with Cron on WPS server or my
 Other files is DB files and logs.
 
 The content of site is about clearning services
+Example https://clnok.ru
