@@ -7,7 +7,7 @@ It demonstrates:
 
 + Maven project
 + Java Spring-Boot
-+ Sendig Emails
++ Sending Emails
 + Using Thymleaf templates
 + Yandex money payments (wallet)
 + Spring Schedule task
